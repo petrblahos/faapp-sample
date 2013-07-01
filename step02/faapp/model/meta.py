@@ -51,7 +51,7 @@ class Address(Base):
         self.country = country
 
     def __unicode__(self):
-        return unicode(self.line1 + "/" + self.line2 + " " + self.city + " " + self.country)
+        return unicode("%s/%s %s %s" % (self.line1, self.line2, self.city, self.country))
 
 def create_session(settings, prefix):
     engine = engine_from_config(settings, prefix)
