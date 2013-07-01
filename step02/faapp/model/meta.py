@@ -29,6 +29,9 @@ class Person(Base):
     def __init__(self, name=""):
         self.name = name
 
+    def __unicode__(self):
+        return unicode(self.name)
+
 class Address(Base):
     __tablename__ = "address"
     id = Column(Integer, primary_key=True)
@@ -47,6 +50,9 @@ class Address(Base):
         self.postcode = postcode
         self.country = country
 
+    def __unicode__(self):
+        return unicode(self.line1 + "/" + self.line2 + " " + self.city + " " + self.country)
+
 def create_session(settings, prefix):
     engine = engine_from_config(settings, prefix)
 
@@ -54,4 +60,18 @@ def create_session(settings, prefix):
     dbsession.configure(bind=engine)
 
     return dbsession
+
+model_names = []
+
+for (name, ent) in locals().items():
+    if name.startswith("_"):
+        continue
+    if "Base"==name:
+        continue
+    try:
+        if issubclass(ent, Base):
+            model_names.append(name)
+    except:
+        pass
+
 
