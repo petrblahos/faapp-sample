@@ -24,7 +24,7 @@ def top(request):
         except:
             pass
 
-    return {'project':'faapp', 'db': request.db, 'models': models, }
+    return { 'models': models, }
 
 @view_config(route_name="list", renderer="/list.mako")
 def list(request):
