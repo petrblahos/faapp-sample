@@ -61,3 +61,17 @@ def create_session(settings, prefix):
 
     return dbsession
 
+model_names = []
+
+for (name, ent) in locals().items():
+    if name.startswith("_"):
+        continue
+    if "Base"==name:
+        continue
+    try:
+        if issubclass(ent, Base):
+            model_names.append(name)
+    except:
+        pass
+
+
