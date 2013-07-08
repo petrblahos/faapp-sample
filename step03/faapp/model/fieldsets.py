@@ -5,8 +5,5 @@ class FieldSet(formalchemy.FieldSet):
                  format=u'%(model)s-%(pk)s-%(name)s',
                  request=None):
         super(FieldSet, self).__init__(model, session, data, prefix, format, request)
-        self.post_config()
 
-    def post_config(self):
-        pass
 
