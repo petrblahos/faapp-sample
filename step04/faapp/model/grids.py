@@ -30,6 +30,3 @@ class Grid(formalchemy.Grid):
         self.append(formalchemy.Field("_edit", label=request.translate("Edit"), type=CommandLinkField))
         self.append(formalchemy.Field("_delete", label=request.translate("Delete"), type=CommandLinkField))
 
-class Address(Grid):
-    pass
-

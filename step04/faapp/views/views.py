@@ -22,12 +22,13 @@ def list(request):
 @view_config(route_name="new", renderer="/edit.mako")
 def edit(request):
     model = meta.__dict__.get(request.matchdict["model"])
+    fs_class = fieldsets.__dict__.get(request.matchdict["model"], fieldsets.FieldSet)
 
     if "id" in request.matchdict:
         obj = request.db.query(model).filter(model.id==request.matchdict["id"]).first()
-        fs = fieldsets.FieldSet(obj, request=request)
+        fs = fs_class(obj, request=request)
     else:
-        fs = fieldsets.FieldSet(model, session=request.db, request=request)
+        fs = fs_class(model, session=request.db, request=request)
 
     if "POST"==request.environ.get("REQUEST_METHOD", "").upper() and request.POST:
         if fs.validate():
