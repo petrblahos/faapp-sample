@@ -53,13 +53,9 @@ class Address(Base):
     def __unicode__(self):
         return unicode("%s/%s %s %s" % (self.line1, self.line2, self.city, self.country))
 
-def create_session(settings, prefix):
+def create_sessionmaker(settings, prefix):
     engine = engine_from_config(settings, prefix)
-
-    dbsession = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
-    dbsession.configure(bind=engine)
-
-    return dbsession
+    return sessionmaker(bind=engine, extension=ZopeTransactionExtension())
 
 model_names = []
 

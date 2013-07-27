@@ -10,7 +10,7 @@ from pyramid.paster import (
     )
 
 from ..model.meta import (
-    create_session,
+    create_sessionmaker,
     Base,
     )
 
@@ -26,7 +26,7 @@ def main(argv=sys.argv):
     config_uri = argv[1]
     setup_logging(config_uri)
     settings = get_appsettings(config_uri)
-    sess = create_session(settings, "sqlalchemy.")
+    sess = create_sessionmaker(settings, "sqlalchemy.")()
     Base.metadata.create_all(sess.bind)
 
 #    with transaction.manager:

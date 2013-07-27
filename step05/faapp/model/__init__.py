@@ -3,19 +3,20 @@ from pyramid.events import NewRequest
 
 import meta
 
+def db(request):
+    session = request.registry.sessionmaker()
+    def cleanup(request):
+        session.close()
+    request.add_finished_callback(cleanup)
+    return session
+
 def includeme(config):
     settings = config.registry.settings
-
-    config.registry.settings["dbsession"] = meta.create_session(settings, "sqlalchemy.")
-
-    def add_model(event):
-        settings = event.request.registry.settings
-        event.request.db = settings["dbsession"]
-
-    config.add_subscriber(add_model, NewRequest)
+    config.registry.sessionmaker = meta.create_sessionmaker(settings, "sqlalchemy.")
+    config.add_request_method(db, reify=True)
 
     formalchemy.config.engine = formalchemy.templates.MakoEngine(
-            directories=[ "C:/work/misc/python/PYFA/faapp-sample/step05/faapp/templates/formalchemy"],
+            directories=[ "faapp/templates/formalchemy"],
             input_encoding='utf-8',
             output_encoding='utf-8')
 
