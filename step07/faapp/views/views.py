@@ -37,8 +37,7 @@ def edit(request):
     try:
         obj = _add_pk_q(request.db.query(model), model, request.params).one()
         fs = fs_class(obj, request=request)
-    except:
-        logger.exception("key error")
+    except KeyError, e:
         fs = fs_class(model, session=request.db, request=request)
 
     if "POST"==request.environ.get("REQUEST_METHOD", "").upper() and request.POST:
