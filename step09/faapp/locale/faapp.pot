@@ -1,0 +1,49 @@
+# Translations template for faapp.
+# Copyright (C) 2013 ORGANIZATION
+# This file is distributed under the same license as the faapp project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: faapp 0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2013-07-31 14:12+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: faapp/templates/base.mako:10
+msgid "HOME"
+msgstr ""
+
+#: faapp/templates/edit.mako:3
+#, python-format
+msgid "Edit %s"
+msgstr ""
+
+#: faapp/templates/list.mako:3
+#, python-format
+msgid "Listing of %s"
+msgstr ""
+
+#: faapp/templates/list.mako:7
+msgid "New"
+msgstr ""
+
+#: faapp/templates/top.mako:3
+msgid "Models"
+msgstr ""
+
+#: faapp/templates/formalchemy/grid_readonly.mako:22
+msgid "Edit"
+msgstr ""
+
+#: faapp/templates/formalchemy/grid_readonly.mako:23
+msgid "Delete"
+msgstr ""
+
