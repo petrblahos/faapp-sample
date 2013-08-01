@@ -40,3 +40,7 @@ step08
 * Defined a custom context factory to fetch data for given request params
 * The views have been significantly simplified by this
 
+step09
+======
+* Localization of both formalchemy messages and our own messages must work
+
