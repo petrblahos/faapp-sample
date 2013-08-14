@@ -1,8 +1,6 @@
 from pyramid.httpexceptions import HTTPFound
 from pyramid.view import view_config
 
-from faapp.model import meta
-
 @view_config(route_name='top', renderer='/top.mako')
 def top(request):
     """
@@ -10,7 +8,7 @@ def top(request):
         To query your orm, you can do things like:
         request.db.Query(model.meta.MyModel).first()
     """
-    return { 'models': meta.model_names, }
+    return { 'models': request.context.get_models(), }
 
 @view_config(route_name="list", renderer="/list.mako")
 def list(request):

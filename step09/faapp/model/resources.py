@@ -11,6 +11,12 @@ except ImportError:
 import fieldsets, grids
 import meta
 
+class TopContext(object):
+    def __init__(self, request):
+        self.request = request
+    def get_models(self):
+        return meta.model_names
+
 def get_pk_columns(clazz):
     try:
         return class_mapper(clazz).primary_key
@@ -28,7 +34,7 @@ def pk(instance):
 def get_pk_map(instance):
     return dict([ (i[0].name, i[1]) for i in pk(instance) ])
 
-class Context(object):
+class OrmContext(object):
     def __init__(self, request):
         self.request = request
         self.model = self._get_model()

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: faapp 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-07-31 14:12+0200\n"
+"POT-Creation-Date: 2013-08-13 15:11+0200\n"
 "PO-Revision-Date: 2013-07-31 14:32+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: pl <LL@li.org>\n"
@@ -36,6 +36,14 @@ msgstr "Vypis %s"
 msgid "New"
 msgstr "Nové"
 
+#: faapp/templates/list.mako:10
+#, python-format
+msgid "The list has %s item."
+msgid_plural "The list has %s items."
+msgstr[0] "Sožnam má %s kousek."
+msgstr[1] "V sožname 2-4: %s"
+msgstr[2] "V sožname ešče vjac: %s"
+
 #: faapp/templates/top.mako:3
 msgid "Models"
 msgstr "Modelky"
@@ -47,4 +55,8 @@ msgstr "Editovacz"
 #: faapp/templates/formalchemy/grid_readonly.mako:23
 msgid "Delete"
 msgstr "Zahoditi"
+
+#: faapp/templates/formalchemy/grid_readonly.mako:24
+msgid "Month"
+msgstr "Měsjač"
 
