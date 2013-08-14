@@ -44,3 +44,8 @@ step09
 ======
 * Localization of both formalchemy messages and our own messages must work
 
+step10
+======
+* Pluralization example
+
+
