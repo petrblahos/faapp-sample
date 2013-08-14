@@ -1,16 +1,13 @@
 from pyramid.httpexceptions import HTTPFound
 from pyramid.view import view_config
 
-from faapp.model import meta
-
 @view_config(route_name='top', renderer='/top.mako')
 def top(request):
     """
-        You can access your db session via request.db.
-        To query your orm, you can do things like:
-        request.db.Query(model.meta.MyModel).first()
+        The data needed to fulfill this request are stored
+        in request.context.
     """
-    return { 'models': meta.model_names, }
+    return { "models": request.context.get_models(), }
 
 @view_config(route_name="list", renderer="/list.mako")
 def list(request):
