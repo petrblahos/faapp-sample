@@ -1,0 +1,62 @@
+# Czech translations for faapp.
+# Copyright (C) 2013 ORGANIZATION
+# This file is distributed under the same license as the faapp project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: faapp 0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2013-08-13 15:11+0200\n"
+"PO-Revision-Date: 2013-06-14 13:55+0200\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: cs <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: faapp/templates/base.mako:10
+msgid "HOME"
+msgstr "DOMŮ"
+
+#: faapp/templates/edit.mako:3
+#, python-format
+msgid "Edit %s"
+msgstr "Editace %s"
+
+#: faapp/templates/list.mako:3
+#, python-format
+msgid "Listing of %s"
+msgstr "Výpis %s"
+
+#: faapp/templates/list.mako:7
+msgid "New"
+msgstr "Nový"
+
+#: faapp/templates/list.mako:10
+#, python-format
+msgid "The list has %s item."
+msgid_plural "The list has %s items."
+msgstr[0] "V seznamu je %s položka."
+msgstr[1] "V seznamu jsou %s položky."
+msgstr[2] "V seznamu je %s položek."
+
+#: faapp/templates/top.mako:3
+msgid "Models"
+msgstr "Modely"
+
+#: faapp/templates/formalchemy/grid_readonly.mako:22
+msgid "Edit"
+msgstr "Editovat"
+
+#: faapp/templates/formalchemy/grid_readonly.mako:23
+msgid "Delete"
+msgstr "Smazat"
+
+#: faapp/templates/formalchemy/grid_readonly.mako:24
+msgid "Month"
+msgstr "Měsíc"
+
