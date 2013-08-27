@@ -16,9 +16,10 @@ def add_localizer(event):
         return localizer.translate(tsf(*args, **kwargs))
     request.localizer = localizer
     request.translate = auto_translate
+    request.environ['fa.translate'] = auto_translate
 
 def includeme(config):
-    config.add_translation_dirs('faapp:locale')
+    config.add_translation_dirs('faapp:locale', 'formalchemy:i18n_resources')
     config.add_subscriber('faapp.locale.add_renderer_globals', 'pyramid.events.BeforeRender')
     config.add_subscriber('faapp.locale.add_localizer', 'pyramid.events.NewRequest')
 

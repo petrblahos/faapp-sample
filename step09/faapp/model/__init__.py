@@ -1,4 +1,5 @@
 import formalchemy
+import formalchemy.i18n
 from pyramid.events import NewRequest
 
 import meta
@@ -19,4 +20,5 @@ def includeme(config):
             directories=[ "faapp/templates/formalchemy"],
             input_encoding='utf-8',
             output_encoding='utf-8')
+    formalchemy.i18n.HAS_PYRAMID = 1
 

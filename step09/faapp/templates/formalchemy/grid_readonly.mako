@@ -21,7 +21,6 @@ from faapp.model.resources import get_pk_map
   %endfor
   <td><a href="${ request.route_url("edit", model=row.__class__.__name__, _query=get_pk_map(row)) }">${ _("Edit") }</a>
   <td><a href="${ request.route_url("delete", model=row.__class__.__name__, _query=get_pk_map(row)) }">${ _("Delete") }</a>
-  <td>${ _("Month") }
   </tr>
 %endfor
 </tbody>

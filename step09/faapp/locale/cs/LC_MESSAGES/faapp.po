@@ -1,15 +1,15 @@
 # Czech translations for faapp.
 # Copyright (C) 2013 ORGANIZATION
 # This file is distributed under the same license as the faapp project.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+# Petr Blahoš <petrb.feedback@gmail.com>, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: faapp 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-08-13 15:11+0200\n"
+"POT-Creation-Date: 2013-08-24 21:00+0200\n"
 "PO-Revision-Date: 2013-06-14 13:55+0200\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Petr Blahoš <petrb.feedback@gmail.com>\n"
 "Language-Team: cs <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
@@ -17,6 +17,54 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: faapp/model/meta.py:37
+msgid "Name"
+msgstr "Jméno"
+
+#: faapp/model/meta.py:37
+msgid "Number"
+msgstr "Číslo"
+
+#: faapp/model/meta.py:37
+msgid "Address"
+msgstr "Adresa"
+
+#: faapp/model/meta.py:60
+msgid "Line1"
+msgstr "Řádek 1"
+
+#: faapp/model/meta.py:60
+msgid "Line2"
+msgstr "Řádek 2"
+
+#: faapp/model/meta.py:60
+msgid "City"
+msgstr "Město"
+
+#: faapp/model/meta.py:60
+msgid "Postcode"
+msgstr "PSČ"
+
+#: faapp/model/meta.py:60
+msgid "Country"
+msgstr "Stát"
+
+#: faapp/model/meta.py:60
+msgid "Persons"
+msgstr "Osoby"
+
+#: faapp/model/meta.py:75
+msgid "Pri1"
+msgstr "Pri1"
+
+#: faapp/model/meta.py:75
+msgid "Pri2"
+msgstr "Pri2"
+
+#: faapp/model/meta.py:75
+msgid "Data"
+msgstr "Údaje"
 
 #: faapp/templates/base.mako:10
 msgid "HOME"
@@ -36,14 +84,6 @@ msgstr "Výpis %s"
 msgid "New"
 msgstr "Nový"
 
-#: faapp/templates/list.mako:10
-#, python-format
-msgid "The list has %s item."
-msgid_plural "The list has %s items."
-msgstr[0] "V seznamu je %s položka."
-msgstr[1] "V seznamu jsou %s položky."
-msgstr[2] "V seznamu je %s položek."
-
 #: faapp/templates/top.mako:3
 msgid "Models"
 msgstr "Modely"
@@ -56,7 +96,6 @@ msgstr "Editovat"
 msgid "Delete"
 msgstr "Smazat"
 
-#: faapp/templates/formalchemy/grid_readonly.mako:24
-msgid "Month"
-msgstr "Měsíc"
+#~ msgid "Month"
+#~ msgstr "Měsíc"
 

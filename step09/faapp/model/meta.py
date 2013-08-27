@@ -18,6 +18,9 @@ from zope.sqlalchemy import ZopeTransactionExtension
 
 Base = declarative_base()
 
+def _(t):
+    pass
+
 class Person(Base):
     __tablename__ = "person"
     id = Column(Integer, primary_key=True)
@@ -30,6 +33,8 @@ class Person(Base):
 
     def __unicode__(self):
         return unicode(self.name)
+
+[ _("Name"), _("Number"), _("Address"), ]
 
 class Address(Base):
     __tablename__ = "address"
@@ -52,6 +57,9 @@ class Address(Base):
     def __unicode__(self):
         return unicode("%s/%s %s %s" % (self.line1, self.line2, self.city, self.country))
 
+[ _("Line1"), _("Line2"), _("City"), _("Postcode"), _("Country"), _("Persons"), ]
+
+
 class NonId(Base):
     __tablename__ = "nonid"
     pri1 = Column(String(10), primary_key=True)
@@ -63,6 +71,8 @@ class NonId(Base):
         self.data = data
     def __unicode__(self):
         return unicode("%s-%s:%s" % (self.pri1, self.pri2, self.data))
+
+[ _("Pri1"), _("Pri2"), _("Data"), ]
 
 def create_sessionmaker(settings, prefix):
     engine = engine_from_config(settings, prefix)

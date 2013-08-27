@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: faapp 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-08-13 15:11+0200\n"
+"POT-Creation-Date: 2013-08-24 21:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,54 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: faapp/model/meta.py:37
+msgid "Name"
+msgstr ""
+
+#: faapp/model/meta.py:37
+msgid "Number"
+msgstr ""
+
+#: faapp/model/meta.py:37
+msgid "Address"
+msgstr ""
+
+#: faapp/model/meta.py:60
+msgid "Line1"
+msgstr ""
+
+#: faapp/model/meta.py:60
+msgid "Line2"
+msgstr ""
+
+#: faapp/model/meta.py:60
+msgid "City"
+msgstr ""
+
+#: faapp/model/meta.py:60
+msgid "Postcode"
+msgstr ""
+
+#: faapp/model/meta.py:60
+msgid "Country"
+msgstr ""
+
+#: faapp/model/meta.py:60
+msgid "Persons"
+msgstr ""
+
+#: faapp/model/meta.py:75
+msgid "Pri1"
+msgstr ""
+
+#: faapp/model/meta.py:75
+msgid "Pri2"
+msgstr ""
+
+#: faapp/model/meta.py:75
+msgid "Data"
+msgstr ""
 
 #: faapp/templates/base.mako:10
 msgid "HOME"
@@ -35,13 +83,6 @@ msgstr ""
 msgid "New"
 msgstr ""
 
-#: faapp/templates/list.mako:10
-#, python-format
-msgid "The list has %s item."
-msgid_plural "The list has %s items."
-msgstr[0] ""
-msgstr[1] ""
-
 #: faapp/templates/top.mako:3
 msgid "Models"
 msgstr ""
@@ -52,9 +93,5 @@ msgstr ""
 
 #: faapp/templates/formalchemy/grid_readonly.mako:23
 msgid "Delete"
-msgstr ""
-
-#: faapp/templates/formalchemy/grid_readonly.mako:24
-msgid "Month"
 msgstr ""
 
