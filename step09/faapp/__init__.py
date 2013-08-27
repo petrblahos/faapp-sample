@@ -8,11 +8,6 @@ def main(global_config, **settings):
     config = Configurator(settings=settings, root_factory=TopContext)
     config.add_static_view('static', 'static', cache_max_age=3600)
 
-#    config.add_route('top', '/', factory="faapp.model.resources.TopContext", )
-#    config.add_route("list", "/list/{model}", factory="faapp.model.resources.OrmContext", )
-#    config.add_route("edit", "/edit/{model}", factory="faapp.model.resources.OrmContext", )
-#    config.add_route("delete", "/delete/{model}", factory="faapp.model.resources.OrmContext", )
-
     config.include("faapp.locale")
     config.include("faapp.model")
 
