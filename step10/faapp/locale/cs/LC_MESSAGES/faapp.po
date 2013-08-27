@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: faapp 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-08-13 15:11+0200\n"
+"POT-Creation-Date: 2013-08-23 15:10+0200\n"
 "PO-Revision-Date: 2013-06-14 13:55+0200\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: cs <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: faapp/model/tools.py:14
+msgid "Value is not even"
+msgstr "Hodnota není sudá"
 
 #: faapp/templates/base.mako:10
 msgid "HOME"
@@ -44,6 +48,17 @@ msgstr[0] "V seznamu je %s položka."
 msgstr[1] "V seznamu jsou %s položky."
 msgstr[2] "V seznamu je %s položek."
 
+#: faapp/templates/list.mako:12
+#: faapp/templates/formalchemy/grid_readonly.mako:24
+#: faapp/templates/formalchemy/grid_readonly.mako:25
+#: faapp/templates/formalchemy/grid_readonly.mako:26
+#, python-format
+msgid "The list contains one item."
+msgid_plural "The list contains %(COUNT)s items."
+msgstr[0] "Seznam obsahuje jednu položku."
+msgstr[1] "Seznam obsahuje %(COUNT)s položky."
+msgstr[2] "Seznam obsahuje %(COUNT)s položek."
+
 #: faapp/templates/top.mako:3
 msgid "Models"
 msgstr "Modely"
@@ -55,8 +70,4 @@ msgstr "Editovat"
 #: faapp/templates/formalchemy/grid_readonly.mako:23
 msgid "Delete"
 msgstr "Smazat"
-
-#: faapp/templates/formalchemy/grid_readonly.mako:24
-msgid "Month"
-msgstr "Měsíc"
 

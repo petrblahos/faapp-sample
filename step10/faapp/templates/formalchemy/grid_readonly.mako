@@ -21,7 +21,9 @@ from faapp.model.resources import get_pk_map
   %endfor
   <td><a href="${ request.route_url("edit", model=row.__class__.__name__, _query=get_pk_map(row)) }">${ _("Edit") }</a>
   <td><a href="${ request.route_url("delete", model=row.__class__.__name__, _query=get_pk_map(row)) }">${ _("Delete") }</a>
-  <td>${ _("Month") }
+  <td>${ ungettext("The list contains one item.", "The list contains %(COUNT)s items.", 1) % { "COUNT": 1 } }
+  <td>${ ungettext("The list contains one item.", "The list contains %(COUNT)s items.", 3) % { "COUNT": 3 } }
+  <td>${ ungettext("The list contains one item.", "The list contains %(COUNT)s items.", 0) % { "COUNT": 0 } }
   </tr>
 %endfor
 </tbody>

@@ -8,7 +8,7 @@ def top(request):
         To query your orm, you can do things like:
         request.db.Query(model.meta.MyModel).first()
     """
-    return { 'models': request.context.get_models(), }
+    return { "models": request.context.get_models(), }
 
 @view_config(route_name="list", renderer="/list.mako")
 def list(request):

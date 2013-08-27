@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: faapp 0.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2013-08-13 15:11+0200\n"
+"POT-Creation-Date: 2013-08-23 15:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.6\n"
+
+#: faapp/model/tools.py:14
+msgid "Value is not even"
+msgstr ""
 
 #: faapp/templates/base.mako:10
 msgid "HOME"
@@ -42,6 +46,15 @@ msgid_plural "The list has %s items."
 msgstr[0] ""
 msgstr[1] ""
 
+#: faapp/templates/list.mako:12 faapp/templates/formalchemy/grid_readonly.mako:24
+#: faapp/templates/formalchemy/grid_readonly.mako:25
+#: faapp/templates/formalchemy/grid_readonly.mako:26
+#, python-format
+msgid "The list contains one item."
+msgid_plural "The list contains %(COUNT)s items."
+msgstr[0] ""
+msgstr[1] ""
+
 #: faapp/templates/top.mako:3
 msgid "Models"
 msgstr ""
@@ -52,9 +65,5 @@ msgstr ""
 
 #: faapp/templates/formalchemy/grid_readonly.mako:23
 msgid "Delete"
-msgstr ""
-
-#: faapp/templates/formalchemy/grid_readonly.mako:24
-msgid "Month"
 msgstr ""
 
