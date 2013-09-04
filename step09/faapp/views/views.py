@@ -13,6 +13,7 @@ def top(request):
 def list(request):
     return { "grid": request.context.get_grid(), }
 
+@view_config(context="faapp.model.resources.NewItemContext", renderer="/edit.mako")
 @view_config(context="faapp.model.resources.ItemContext", renderer="/edit.mako")
 def edit(request):
     fs = request.context.get_fs()
