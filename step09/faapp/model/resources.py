@@ -54,7 +54,6 @@ class NewItemContext(object):
         self.request = parent.request
         self.model = parent.model
     def get_fs(self):
-        print self.__parent__.model.__name__
         fs_class = fieldsets.__dict__.get(self.__parent__.model.__name__, fieldsets.FieldSet)
         return fs_class(self.model, session=self.request.db, request=self.request)
     def __unicode__(self):
