@@ -1,0 +1,27 @@
+# Translations template for faapp.
+# Copyright (C) 2013 ORGANIZATION
+# This file is distributed under the same license as the faapp project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: faapp 0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2013-06-14 13:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: faapp/templates/mytemplate.mako:10
+msgid "This is a project made with pyramid_locmako scaffolding."
+msgstr ""
+
+#: faapp/templates/mytemplate.mako:14
+msgid "Database session:"
+msgstr ""
+
