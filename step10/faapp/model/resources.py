@@ -12,7 +12,7 @@ try:
 except ImportError:
     from sqlalchemy import exceptions as sqlalchemy_exceptions
 
-import fieldsets, grids
+import fieldsets, grids, tools
 import meta
 
 logger = logging.getLogger("model")
@@ -74,7 +74,8 @@ class ModelContext(object):
         fs_class = fieldsets.__dict__.get(self.name, fieldsets.FieldSet)
         return fs_class(self.model, session=self.request.db, request=self.request)
     def get_q_fs(self):
-        fs_class = fieldsets.__dict__.get(self.name, fieldsets.FieldSet)
+        #fs_class = fieldsets.__dict__.get(self.name, fieldsets.FieldSet)
+        fs_class = tools.QFieldSet
         return fs_class(self.model, session=self.request.db, request=self.request, data=self.filter, format=u'%(name)s')
 
     def __getitem__(self, name):

@@ -25,7 +25,7 @@ def list(request):
     for (k, v) in request.params.iteritems():
         if v and k in dir(request.context.model):
             filter[k] = v
-    if filter:
+    if filter: #no, no, no, we must go through redirection
         request.context.filter = filter
         return HTTPFound(location=request.resource_url(request.context))
 
