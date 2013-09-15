@@ -18,24 +18,25 @@ def admin1(request):
         request.db.add(m)
     return HTTPFound(location=request.resource_url(request.context))
 
-
 @view_config(context="faapp.model.resources.ModelContext", renderer="/list.mako")
 def list(request):
+    return { "grid": request.context.get_grid(), }
+
+@view_config(context="faapp.model.resources.ModelContext", name="filter")
+def list_filter(request):
     filter = {}
     for (k, v) in request.params.iteritems():
         if v and k in dir(request.context.model):
             filter[k] = v
-    if filter: #no, no, no, we must go through redirection
-        request.context.filter = filter
-        return HTTPFound(location=request.resource_url(request.context))
+    request.context.filter = filter
+    request.context.reset_pager()
+    return HTTPFound(location=request.resource_url(request.context))
 
-    return { "grid": request.context.get_grid(), }
-
-@view_config(context="faapp.model.resources.ModelContext", renderer="/list.mako", name="prev")
+@view_config(context="faapp.model.resources.ModelContext", name="prev")
 def list_next_page(request):
     request.context.pager = (max(0, request.context.pager[0]-1), request.context.pager[1])
     return HTTPFound(location=request.resource_url(request.context))
-@view_config(context="faapp.model.resources.ModelContext", renderer="/list.mako", name="next")
+@view_config(context="faapp.model.resources.ModelContext", name="next")
 def list_prev_page(request):
     request.context.pager = (request.context.pager[0]+1, request.context.pager[1])
     return HTTPFound(location=request.resource_url(request.context))
@@ -53,7 +54,7 @@ def edit(request):
 
     return { 'fs': fs }
 
-@view_config(context="faapp.model.resources.ItemContext", name="delete", renderer="/edit.mako")
+@view_config(context="faapp.model.resources.ItemContext", name="delete")
 def delete(request):
     obj = request.context.get_object()
     request.db.delete(obj)

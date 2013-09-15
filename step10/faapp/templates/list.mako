@@ -12,7 +12,7 @@ ${ (request.context.pager[0]+1)*request.context.pager[1] }
 </table>
 <a href="${ request.resource_url(request.context, "new") }">${ _("New") }</a>
 <hr>
-<form method="GET">
+<form action="${ request.resource_url(request.context, "filter") }" method="GET">
 ${ request.context.get_q_fs().render() |n }
 <input type="submit"></input>
 </form>
