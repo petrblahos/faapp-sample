@@ -70,7 +70,7 @@ class ModelContext(object):
         pg_start = self.pager[0]*self.pager[1]
         return grid_class(self.model, q[pg_start:pg_start+self.pager[1]], request=self.request, )
     def get_q_fs(self):
-        return tools.QFieldSet(self.model, session=self.request.db, request=self.request, data=self.filter, format=u'%(name)s')
+        return tools.QFieldSet(self.model, session=self.request.db, request=self.request, data=self.filter)
 
     def __getitem__(self, name):
         if "new"==name:

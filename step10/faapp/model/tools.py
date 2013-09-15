@@ -27,9 +27,8 @@ class TextFieldRenderer(formalchemy.fields.FieldRenderer):
 
 class QFieldSet(formalchemy.FieldSet):
     def __init__(self, model, session=None, data=None, prefix=None,
-                 format=u'%(model)s-%(pk)s-%(name)s',
                  request=None):
-        super(QFieldSet, self).__init__(model, session, data, prefix, format, request)
+        super(QFieldSet, self).__init__(model, session, data, prefix, format=u'%(name)s', request=request, )
         for k in self.default_renderers.keys():
             self.default_renderers[k] = TextFieldRenderer
         # find relations, we want to exclude them
