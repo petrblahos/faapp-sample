@@ -54,7 +54,7 @@ class NewItemContext(object):
         self.request = parent.request
         self.model = parent.model
     def get_fs(self):
-        fs_class = fieldsets.__dict__.get(self.__parent__.model.__name__, fieldsets.FieldSet)
+        fs_class = fieldsets.__dict__.get(self.model.__name__, fieldsets.FieldSet)
         return fs_class(self.model, session=self.request.db, request=self.request)
     def __unicode__(self):
         return "%s - %s" % (self.__parent__.__name__, "New Item")
