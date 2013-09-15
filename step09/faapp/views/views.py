@@ -26,7 +26,7 @@ def edit(request):
 
     return { 'fs': fs }
 
-@view_config(context="faapp.model.resources.ItemContext", name="delete", renderer="/edit.mako")
+@view_config(context="faapp.model.resources.ItemContext", name="delete")
 def delete(request):
     obj = request.context.get_object()
     request.db.delete(obj)
