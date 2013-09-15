@@ -30,7 +30,7 @@ class TopContext(object):
 class ModelContext(object):
     """
         We expect the url shema:
-            .../Modelname|filter|pager/...
+            .../Modelname.pager.filter/...
         where both filter and pager are optional. filter is in the query string
         format and contains pairs key=value. If specified, then only the rows
         containing the specified value as a substring is shown. pager is in the
@@ -41,42 +41,36 @@ class ModelContext(object):
     PAGER_DEFAULT = (0, 10)
     def __init__(self, parent, name):
         self.__parent__ = parent
-        self.name = name
         self.request = parent.request
-        spl = name.split("|")
+        spl = name.split(".", 2)
         spl.extend(["", ""])
         self.model_name = spl[0]
         try:
-            self.filter = urlparse.parse_qs(spl[1])
+            self.filter = dict(urlparse.parse_qsl(spl[2]))
+            # parse_qs maps key to a list of values, we need just one value
         except:
             self.filter = {}
         try:
             self.pager = self.PAGER_DEFAULT
-            pg = spl[2].split("-")
+            pg = spl[1].split("-")
             if 2==len(pg) and pg[0].isdigit() and pg[1].isdigit():
                 self.pager = ( int(pg[0]), int(pg[1]) )
         except:
             pass
         self.model = meta.__dict__[self.model_name]
+    def reset_pager(self):
+        self.pager = self.PAGER_DEFAULT
     def get_name(self):
-        return "%s|%s|%s-%s" % (self.model_name, urllib.urlencode(self.filter), self.pager[0], self.pager[1])
+        return "%s.%s-%s.%s" % (self.model_name, self.pager[0], self.pager[1], urllib.urlencode(self.filter), )
     def get_grid(self):
         q = self.request.db.query(self.model)
         for (k, v) in self.filter.iteritems():
-            q = q.filter(self.model.__dict__[k].like("%s%%" % v[0]))
-        grid_class = grids.__dict__.get(self.name, grids.Grid)
+            q = q.filter(self.model.__dict__[k].like("%s%%" % v))
+        grid_class = grids.__dict__.get(self.model_name, grids.Grid)
         pg_start = self.pager[0]*self.pager[1]
         return grid_class(self.model, q[pg_start:pg_start+self.pager[1]], request=self.request, )
-    def get_fs(self):
-        """
-            Returns an "empty" fieldset.
-        """
-        fs_class = fieldsets.__dict__.get(self.name, fieldsets.FieldSet)
-        return fs_class(self.model, session=self.request.db, request=self.request)
     def get_q_fs(self):
-        #fs_class = fieldsets.__dict__.get(self.name, fieldsets.FieldSet)
-        fs_class = tools.QFieldSet
-        return fs_class(self.model, session=self.request.db, request=self.request, data=self.filter, format=u'%(name)s')
+        return tools.QFieldSet(self.model, session=self.request.db, request=self.request, data=self.filter, format=u'%(name)s')
 
     def __getitem__(self, name):
         if "new"==name:
@@ -99,7 +93,7 @@ class NewItemContext(object):
         self.request = parent.request
         self.model = parent.model
     def get_fs(self):
-        fs_class = fieldsets.__dict__.get(self.__parent__.model.__name__, fieldsets.FieldSet)
+        fs_class = fieldsets.__dict__.get(self.model.__name__, fieldsets.FieldSet)
         return fs_class(self.model, session=self.request.db, request=self.request)
     def __unicode__(self):
         return "%s - %s" % (self.__parent__.__name__, "New Item")
@@ -109,6 +103,7 @@ class ItemContext(object):
         self.__parent__ = parent
         self.request = parent.request
         self.obj = obj
+        self.model = parent.model
     def get_object(self):
         return self.obj
     def get_name(self):
@@ -120,7 +115,7 @@ class ItemContext(object):
         except KeyError, e:
             return fs_class(self.model, session=self.request.db, request=self.request)
     def __unicode__(self):
-        return "%s: %s" % (unicode(self.__parent__), self.__name__)
+        return "%s, %s" % (unicode(self.__parent__), self.__name__)
 
     __name__ = property(get_name)
 

@@ -6,6 +6,24 @@ class TextFieldRenderer(formalchemy.fields.FieldRenderer):
     def render(self, **kwargs):
         return h.text_field(self.name, value=self.value, **kwargs)
 
+    @property
+    def value(self):
+        """
+        Submitted value, or field value converted to string.
+        Return value is always either None or a string.
+        """
+        v = None
+        if not self.field.is_readonly() and self.params is not None:
+            # submitted value.  do not deserialize here since that requires valid data, which we might not have
+            try:
+                v = self._serialized_value()
+            except formalchemy.fields.FieldNotFoundError, e:
+                pass
+        if v:
+            return v
+
+        return ""
+
 
 class QFieldSet(formalchemy.FieldSet):
     def __init__(self, model, session=None, data=None, prefix=None,
