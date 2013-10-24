@@ -1,0 +1,93 @@
+# Translations template for faapp.
+# Copyright (C) 2013 ORGANIZATION
+# This file is distributed under the same license as the faapp project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: faapp 0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2013-10-24 14:56+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: faapp/model/meta.py:38
+msgid "Name"
+msgstr ""
+
+#: faapp/model/meta.py:38
+msgid "Number"
+msgstr ""
+
+#: faapp/model/meta.py:38
+msgid "Address"
+msgstr ""
+
+#: faapp/model/meta.py:61
+msgid "Line1"
+msgstr ""
+
+#: faapp/model/meta.py:61
+msgid "Line2"
+msgstr ""
+
+#: faapp/model/meta.py:61
+msgid "City"
+msgstr ""
+
+#: faapp/model/meta.py:61
+msgid "Postcode"
+msgstr ""
+
+#: faapp/model/meta.py:61
+msgid "Country"
+msgstr ""
+
+#: faapp/model/meta.py:61
+msgid "Persons"
+msgstr ""
+
+#: faapp/model/meta.py:76
+msgid "Pri1"
+msgstr ""
+
+#: faapp/model/meta.py:76
+msgid "Pri2"
+msgstr ""
+
+#: faapp/model/meta.py:76
+msgid "Data"
+msgstr ""
+
+#: faapp/templates/base.mako:14
+msgid "HOME"
+msgstr ""
+
+#: faapp/templates/edit.mako:3
+#, python-format
+msgid "Edit %s"
+msgstr ""
+
+#: faapp/templates/list.mako:3
+#, python-format
+msgid "Listing of %s"
+msgstr ""
+
+#: faapp/templates/list.mako:4
+msgid "Pager:"
+msgstr ""
+
+#: faapp/templates/list.mako:13
+msgid "New"
+msgstr ""
+
+#: faapp/templates/top.mako:3
+msgid "Tables"
+msgstr ""
+
