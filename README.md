@@ -42,10 +42,18 @@ step08
 
 step09
 ======
-* Localization of both formalchemy messages and our own messages must work
+* Moved from urldispatch to traversal
 
 step10
 ======
-* Pluralization example
+* Implemented pager and filter in traversal
+
+step11
+======
+* Localization of both formalchemy messages and our own messages must work
+
+step12
+======
+* Support for pluralization example
 
 
