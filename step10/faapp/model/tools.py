@@ -24,18 +24,15 @@ class TextFieldRenderer(formalchemy.fields.FieldRenderer):
 
         return ""
 
-
 class QFieldSet(formalchemy.FieldSet):
+    default_renderers = dict([(k, TextFieldRenderer) for k in formalchemy.FieldSet.default_renderers.iterkeys()])
     def __init__(self, model, session=None, data=None, prefix=None,
                  request=None):
         super(QFieldSet, self).__init__(model, session, data, prefix, format=u'%(name)s', request=request, )
-        for k in self.default_renderers.keys():
-            self.default_renderers[k] = TextFieldRenderer
         # find relations, we want to exclude them
         exclude = []
         for (k, v) in self._fields.iteritems():
             if v.is_relation:
                 exclude.append(v)
         self.configure(pk=False, exclude=exclude)
-
 
