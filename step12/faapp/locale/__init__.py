@@ -28,7 +28,7 @@ def add_localizer(event):
     def auto_translate(*args, **kwargs):
         return localizer.translate(tsf(*args, **kwargs))
     def auto_pluralize(*args, **kwargs):
-        kwargs.setdefault("domain", "faapp") # or tsf like in auto_translate?
+        kwargs.setdefault("domain", "faapp")
         return localizer.pluralize(*args, **kwargs)
     request.localizer = localizer
     request.translate = auto_translate
@@ -109,6 +109,5 @@ def get_localizer(request):
         request.localizer = localizer
 
     return localizer
-
 
 
