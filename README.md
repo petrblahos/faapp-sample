@@ -54,6 +54,7 @@ step11
 
 step12
 ======
-* Support for pluralization example
+* Added support for pluralization, pluralization example.
+* Defined a custom validator.
 
 
