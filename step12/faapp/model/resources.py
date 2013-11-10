@@ -96,7 +96,7 @@ class NewItemContext(object):
         fs_class = fieldsets.__dict__.get(self.model.__name__, fieldsets.FieldSet)
         return fs_class(self.model, session=self.request.db, request=self.request)
     def __unicode__(self):
-        return "%s - %s" % (self.__parent__.__name__, "New Item")
+        return "%s - %s" % (unicode(self.__parent__), "New Item")
 
 class ItemContext(object):
     def __init__(self, parent, obj):
@@ -115,7 +115,7 @@ class ItemContext(object):
         except KeyError, e:
             return fs_class(self.model, session=self.request.db, request=self.request)
     def __unicode__(self):
-        return "%s, %s" % (unicode(self.__parent__), self.__name__)
+        return "%s - %s" % (unicode(self.__parent__), self.__name__)
 
     __name__ = property(get_name)
 
