@@ -57,4 +57,9 @@ step12
 * Added support for pluralization, pluralization example.
 * Defined a custom validator.
 
+step13
+======
+* A lot of cleanup.
+* Views now accept parameters context and request instead of just request.
+* Implemented a class based view for object listing, paging and filtering.
 

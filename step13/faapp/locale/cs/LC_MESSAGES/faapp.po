@@ -1,0 +1,117 @@
+# Czech translations for faapp.
+# Copyright (C) 2013 ORGANIZATION
+# This file is distributed under the same license as the faapp project.
+# Petr Blahoš <petrb.feedback@gmail.com>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: faapp 0.0\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2013-10-24 15:23+0200\n"
+"PO-Revision-Date: 2013-06-14 13:55+0200\n"
+"Last-Translator: Petr Blahoš <petrb.feedback@gmail.com>\n"
+"Language-Team: cs <LL@li.org>\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.6\n"
+
+#: faapp/model/meta.py:38
+msgid "Name"
+msgstr "Jméno"
+
+#: faapp/model/meta.py:38
+msgid "Number"
+msgstr "Číslo"
+
+#: faapp/model/meta.py:38
+msgid "Address"
+msgstr "Adresa"
+
+#: faapp/model/meta.py:61
+msgid "Line1"
+msgstr "Řádek 1"
+
+#: faapp/model/meta.py:61
+msgid "Line2"
+msgstr "Řádek 2"
+
+#: faapp/model/meta.py:61
+msgid "City"
+msgstr "Město"
+
+#: faapp/model/meta.py:61
+msgid "Postcode"
+msgstr "PSČ"
+
+#: faapp/model/meta.py:61
+msgid "Country"
+msgstr "Stát"
+
+#: faapp/model/meta.py:61
+msgid "Persons"
+msgstr "Osoby"
+
+#: faapp/model/meta.py:76
+msgid "Pri1"
+msgstr "Pri1"
+
+#: faapp/model/meta.py:76
+msgid "Pri2"
+msgstr "Pri2"
+
+#: faapp/model/meta.py:76
+msgid "Data"
+msgstr "Údaje"
+
+#: faapp/model/tools.py:20
+msgid "Value is not even"
+msgstr "Hodnota není sudá"
+
+#: faapp/templates/base.mako:14
+msgid "HOME"
+msgstr "DOMŮ"
+
+#: faapp/templates/edit.mako:3
+#, python-format
+msgid "Edit %s"
+msgstr "Editace %s"
+
+#: faapp/templates/list.mako:3
+#, python-format
+msgid "Listing of %s"
+msgstr "Výpis %s"
+
+#: faapp/templates/list.mako:4
+msgid "Pager:"
+msgstr "Stránky:"
+
+#: faapp/templates/list.mako:13
+msgid "New"
+msgstr "Nový"
+
+#: faapp/templates/top.mako:3
+msgid "Tables"
+msgstr "Tabulky"
+
+#: faapp/templates/formalchemy/grid_readonly.mako:24
+msgid "Edit"
+msgstr "Editovat"
+
+#: faapp/templates/formalchemy/grid_readonly.mako:25
+msgid "Delete"
+msgstr "Smazat"
+
+#: faapp/templates/formalchemy/grid_readonly.mako:30
+#: faapp/templates/formalchemy/grid_readonly.mako:31
+#: faapp/templates/formalchemy/grid_readonly.mako:32
+#: faapp/templates/formalchemy/grid_readonly.mako:33
+#, python-format
+msgid "The list contains one item."
+msgid_plural "The list contains %(COUNT)s items."
+msgstr[0] "Seznam obsahuje jednu položku."
+msgstr[1] "Seznam obsahuje %(COUNT)s položky."
+msgstr[2] "Seznam obsahuje %(COUNT)s položek."
+
