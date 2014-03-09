@@ -5,7 +5,7 @@ import meta
 
 def db(request):
     """
-        Add the sqlalchemy sessino to the request.
+        Add the sqlalchemy session to the request.
     """
     session = request.registry.sessionmaker()
     def cleanup(request):
@@ -29,4 +29,3 @@ def includeme(config):
         input_encoding='utf-8',
         output_encoding='utf-8',
     )
-

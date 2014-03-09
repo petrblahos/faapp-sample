@@ -6,11 +6,6 @@ from sqlalchemy.orm import (
     class_mapper,
     )
 
-try:
-    from sqlalchemy import exc as sqlalchemy_exceptions
-except ImportError:
-    from sqlalchemy import exceptions as sqlalchemy_exceptions
-
 import fieldsets, grids, tools
 import meta
 
@@ -156,6 +151,7 @@ class NewItemContext(object):
         )
     def __unicode__(self):
         return "%s - %s" % (unicode(self.__parent__), "New Item")
+        ### FIXME: non-localizable "New Item"
 
 class ItemContext(object):
     """
@@ -167,10 +163,19 @@ class ItemContext(object):
         self.obj = obj
         self.model = parent.model
     def get_object(self):
+        """
+            Returns the database (ORM) object associated with this context.
+        """
         return self.obj
     def get_name(self):
+        """
+            Returns the name of this context.
+        """
         return urllib.urlencode(meta.get_pk_map(self.obj))
     def get_fs(self):
+        """
+            Returns the fieldset that can edit this db object.
+        """
         fs_class = fieldsets.__dict__.get(self.model.__name__, fieldsets.FieldSet)
         try:
             return fs_class(self.obj, request=self.request)

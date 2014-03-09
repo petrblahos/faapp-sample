@@ -1,5 +1,5 @@
 """
-    FieldSets.
+    Custom FieldSets and FieldSet base.
 """
 import formalchemy
 import faapp.model.tools

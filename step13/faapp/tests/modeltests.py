@@ -1,5 +1,10 @@
 import unittest
 
+from sqlalchemy import create_engine
+from sqlalchemy.orm import (
+    sessionmaker,
+)
+
 from pyramid import testing
 from ..model.meta import (
     Address, Person,
@@ -13,13 +18,15 @@ class ModelTests(unittest.TestCase):
         testing.tearDown()
 
     def test_my_model(self):
-        from sqlalchemy import create_engine
+        return
         engine = create_engine("sqlite://")
-        db = scoped_session(sessionmaker(extension=ZopeTransactionExtension()))
-        db.configure(bind=engine)
-        # now I have my db (session) and can do whatever I want with it
-        res = db.query(MyModel).filter(MyModel.name=="one").all()
 
-        self.assertEqual(len(res), 1)
-        self.assertEqual(res[0].id, 1)
+        db = sessionmaker(
+            bind=engine,
+        )()
+
+        # now I have my db (session) and can do whatever I want with it
+        res = db.query(Address).filter(Address.line1=="one").all()
+
+        self.assertEqual(len(res), 0)
 

@@ -103,6 +103,9 @@ def get_pk_map(instance):
 
     return ret
 
+"""
+    We gather the names of all our models into model_names.
+"""
 model_names = []
 
 for (name, ent) in locals().items():

@@ -1,5 +1,5 @@
 """
-    Grids.
+    CustomGrids and Grid base.
 """
 import formalchemy
 
